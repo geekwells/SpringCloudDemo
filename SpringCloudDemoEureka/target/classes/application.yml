@@ -1,0 +1,23 @@
+
+spring:
+  application:
+    name: eureka-server
+  security:
+    user:
+      name: root
+      password: root
+
+server:
+  host: 127.0.0.1
+  port: 9000
+
+
+eureka:
+  client:
+    #此项目不作为客户端注册
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defalutZone: http://${spring.security.user.name}:${spring.security.user.password}@${server.host}:${server.port}
+ 
+
