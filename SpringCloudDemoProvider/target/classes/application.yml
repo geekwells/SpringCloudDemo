@@ -1,0 +1,23 @@
+server:
+  port: 8081
+ 
+# 自定义变量
+user:
+  name: geekswg
+  email: geekswg@qq.com 
+  age: 28
+  defaultName: shiwanggui
+  
+  
+eurekaServer:
+  host: 127.0.0.1
+  port: 9000
+  user: root
+  password: root
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://${eurekaServer.user}:${eurekaServer.password}@${eurekaServer.host}:${eurekaserver.port}/eureka
+
