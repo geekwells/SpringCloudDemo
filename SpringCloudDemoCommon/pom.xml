@@ -10,6 +10,7 @@
     !-- 版本号管理 -->
     <properties>
         <springcloud-eureka.version>2.2.2.RELEASE</springcloud-eureka.version>
+        <lombok.version>1.18.12</lombok.version>
     </properties>
 
     <groupId>org.geek.SpringCloudDemoCommon</groupId>
@@ -23,9 +24,13 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
             <version>${springcloud-eureka.version}</version>
-
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
     </dependencies>
 
 </project>
