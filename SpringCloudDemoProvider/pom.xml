@@ -4,16 +4,33 @@
     <parent>
         <artifactId>SpringCloudDemoCommon</artifactId>
         <groupId>org.geek.SpringCloudDemo</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version/>
         <relativePath/>  <!--本例中此处是可选的-->
     </parent>
 
     <groupId>org.geek.SpringCoudDemo</groupId>
     <artifactId>SpringCloudDemoProvider</artifactId>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <lombok.version>1.18.12</lombok.version>
+
+        <springBoot.version>2.0.3.RELEASE</springBoot.version>
+        <springCloud.version>Finchley.RELEASE</springCloud.version>
+        <eureka.version>2.0.3.RELEASE</eureka.version>
+
+        <springBootStarterParent.version>2.2.7.RELEASE</springBootStarterParent.version>
+
+        <junit.version>4.12</junit.version>
+    </properties>
+
     <!-- 版本号管理 -->
     <properties>
-        <springcloud-eureka.version>2.2.2.RELEASE</springcloud-eureka.version>
+        <!--        <springcloud-eureka.version>2.2.2.RELEASE</springcloud-eureka.version>-->
+
     </properties>
 
     <dependencies>
@@ -21,7 +38,7 @@
             <groupId>org.springframework.cloud</groupId>
             <!--注意此处的依赖是SpringBoot2.0以后专用的，如果您使用的SpringBoot版本低于2.0请使用spring-cloud-starter-eureka-server-->
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-            <version>${springcloud-eureka.version}</version>
+            <version>${eureka.version}</version>
         </dependency>
     </dependencies>
 </project>

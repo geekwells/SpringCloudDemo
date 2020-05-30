@@ -2,15 +2,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.geek.SpringCloudDemo</groupId>
     <artifactId>SpringCloudDemo</artifactId>
+    <groupId>org.geek.SpringCloudDemo</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.7.RELEASE</version>
+        <version>2.0.3.RELEASE</version>
     </parent>
 
     <properties>
@@ -20,16 +20,16 @@
 
         <lombok.version>1.18.12</lombok.version>
 
-        <springBoot.version>2.3.0.RELEASE</springBoot.version>
+        <springBoot.version>2.0.3.RELEASE</springBoot.version>
+        <springCloud.version>Finchley.RELEASE</springCloud.version>
+        <eureka.version>2.0.3.RELEASE</eureka.version>
+
         <springBootStarterParent.version>2.2.7.RELEASE</springBootStarterParent.version>
-        <springCloud.version>>Finchley.RELEASE</springCloud.version>
-        <eureka.version>2.2.2.RELEASE</eureka.version>
+
         <junit.version>4.12</junit.version>
     </properties>
 
-
     <dependencies>
-
         <!--全局排除spring-boot-starter-logging内的所有依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -57,14 +57,14 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-dependencies</artifactId>
-            <version>Hoxton.SR4</version>
+            <version>${springCloud.version}</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.3.0.RELEASE</version>
+            <version>${springBoot.version}</version>
 
         </dependency>
 
@@ -103,7 +103,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR4</version>
+                <version>${springCloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

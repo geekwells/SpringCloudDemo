@@ -7,34 +7,31 @@
     <packaging>jar</packaging>
     <!-- 引入父项目 -->
     <parent>
-        <groupId>org.geek.SpringCloudDemo</groupId>
         <artifactId>SpringCloudDemo</artifactId>
+        <groupId>org.geek.SpringCloudDemo</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <properties>
         <hutool.version>5.3.5</hutool.version>
+        <zipkin.version>2.11.8</zipkin.version>
     </properties>
+
     <dependencies>
 
         <!-- start====引入 zipkin====  -->
         <dependency>
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-server</artifactId>
-            <version>2.12.3</version>
+            <version>${zipkin.version}</version>
 
         </dependency>
         <dependency>  <!--和spring - cloud 自带的冲突了-->
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-autoconfigure-ui</artifactId>
-            <version>2.12.3</version>
+            <version>${zipkin.version}</version>
         </dependency>
         <!-- end====引入 zipkin====  -->
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-context</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -2,12 +2,13 @@
 spring:
   application:
     name: cloud-common
-  security:
-    user:
-      name: root
-      password: root
+#  security:
+#    user:
+#      name: root
+#      password: root
 server:
   port: 8000
+
 
 # zipkin 需要配置的
 management:
@@ -15,16 +16,19 @@ management:
     web:
       server:
         auto-time-requests: false
+eurekaServer:
+  host: 127.0.0.1
+  port: 9000
+
 eureka:
-  server:
-    host: 127.0.0.1
-    port: 9000
   client:
-    #此项目不作为客户端注册
+    #将此项目注册到Eureka服务
     register-with-eureka: true
     fetch-registry: false
+    # eureka 注册中心服务地址
     service-url:
-      defalutZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.server.host}:${eureka.server.port}
+      defalutZone: http://${eurekaServer.host}:${eurekaServer.port}/eureka
+  #      defalutZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.server.host}:${eureka.server.port}
   instance:
     prefer-ip-address: true
 # redis 配置
