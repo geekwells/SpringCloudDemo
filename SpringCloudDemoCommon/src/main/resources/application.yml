@@ -1,0 +1,40 @@
+# 配置项目名称
+spring:
+  application:
+    name: Spring-Cloud-Comm
+server:
+  port: 8080
+# =====================================
+# 自定义变量
+user:
+  name: geekswg
+  email: geekswg@qq.com
+  age: 28
+  defaultName: shiwanggui
+# =====================================
+# 配置 Eureka
+eurekaServer:
+  host: 127.0.0.1
+  port: 9000
+  user: root
+  password: root
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://${eurekaServer.user}:${eurekaServer.password}@${eurekaServer.host}:${eurekaserver.port}/eureka
+
+# redis 配置
+redis:
+  host: 127.0.0.1
+  port: 6000
+  #  password:
+  database: 1
+  timeout: 10*1000
+  lettuce:
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+
