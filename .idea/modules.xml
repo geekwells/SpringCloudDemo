@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/SpringCloudDemoConsumer/SpringCloudDemoConsumer.iml" filepath="$PROJECT_DIR$/SpringCloudDemoConsumer/SpringCloudDemoConsumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringCloudDemoEureka/SpringCloudDemoEureka.iml" filepath="$PROJECT_DIR$/SpringCloudDemoEureka/SpringCloudDemoEureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringCloudDemoProvider/SpringCloudDemoProvider.iml" filepath="$PROJECT_DIR$/SpringCloudDemoProvider/SpringCloudDemoProvider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringCloudDemoService/SpringCloudDemoService.iml" filepath="$PROJECT_DIR$/SpringCloudDemoService/SpringCloudDemoService.iml" />
     </modules>
   </component>
 </project>
