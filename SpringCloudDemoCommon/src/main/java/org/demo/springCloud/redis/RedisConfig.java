@@ -29,7 +29,7 @@ import java.util.Set;
 
 @Configuration
 @EnableCaching
-@AutoConfigureAfter(RedisConfig.class)
+//@AutoConfigureAfter(RedisConfig.class)
 
 public class RedisConfig extends CachingConfigurerSupport {
     public RedisConfig() {

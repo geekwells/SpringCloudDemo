@@ -7,26 +7,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SpringCloudDemoService" />
-        <module name="SpringCloudDemoConsumer" />
-        <module name="SpringBootTest" />
         <module name="SpringCloudDemoEureka" />
+        <module name="SpringBootTest" />
+        <module name="SpringCloudDemoService" />
+        <module name="SpringCloudDemoCommon" />
         <module name="SpringCloudDemoProvider" />
+        <module name="SpringCloudDemoConsumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="SpringBootTest" target="1.8" />
       <module name="SpringCloudDemo" target="1.8" />
       <module name="SpringCloudDemoCommon" target="1.8" />
-      <module name="SpringCloudDemoConsumer" target="1.5" />
+      <module name="SpringCloudDemoConsumer" target="1.8" />
       <module name="SpringCloudDemoEureka" target="1.8" />
-      <module name="SpringCloudDemoProvider" target="1.5" />
+      <module name="SpringCloudDemoProvider" target="1.8" />
       <module name="SpringCloudDemoService" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SpringBootTest" options="-parameters" />
+      <module name="SpringCloudDemoCommon" options="-parameters" />
       <module name="SpringCloudDemoConsumer" options="-parameters" />
       <module name="SpringCloudDemoEureka" options="-parameters" />
       <module name="SpringCloudDemoProvider" options="-parameters" />
