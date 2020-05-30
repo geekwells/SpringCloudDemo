@@ -22,5 +22,6 @@ eureka:
   client:
     register-with-eureka: true
     service-url:
-      defaultZone: http://${eurekaServer.user}:${eurekaServer.password}@${eurekaServer.host}:${eurekaserver.port}/eureka
+      defaultZone: http://${eurekaServer.host}:${eurekaserver.port}/eureka
+#      defaultZone: http://${eurekaServer.user}:${eurekaServer.password}@${eurekaServer.host}:${eurekaserver.port}/eureka
 
