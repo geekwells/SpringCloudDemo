@@ -12,11 +12,13 @@ server:
 
 
 eureka:
+  server:
+    enable-replicated-request-compression: false
   client:
     #此项目不作为客户端注册
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
-      defalutZone: http://${spring.security.user.name}:${spring.security.user.password}@${server.host}:${server.port}
- 
+      defalutZone: http://${server.host}:${server.port}/eureka
+
 
