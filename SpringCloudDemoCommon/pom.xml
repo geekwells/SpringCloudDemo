@@ -18,13 +18,24 @@
     </properties>
 
     <dependencies>
+        <!--        <dependency>-->
+        <!--            <groupId>org.slf4j</groupId>-->
+        <!--            <artifactId>slf4j-jcl</artifactId>-->
+        <!--            <version>${slf4j-jcl.version}</version>-->
+        <!--            <scope>compile</scope>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.logging.log4j</groupId>-->
+        <!--            <artifactId>log4j-slf4j-impl</artifactId>-->
+        <!--            <version>${log4j-slf4j-impl.version}</version>-->
+        <!--            <scope>compile</scope>-->
+        <!--        </dependency>-->
 
         <!-- start====引入 zipkin====  -->
         <dependency>
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-server</artifactId>
             <version>${zipkin.version}</version>
-
         </dependency>
         <dependency>  <!--和spring - cloud 自带的冲突了-->
             <groupId>io.zipkin.java</groupId>

@@ -23,6 +23,11 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://${eurekaServer.host}:${eurekaServer.port}/eureka
+
+# 配置日志文件 地址
+logging:
+  config: classpath:log4j2-spring.xml
+
 # redis 配置
 #redis:
 #  host: 127.0.0.1
