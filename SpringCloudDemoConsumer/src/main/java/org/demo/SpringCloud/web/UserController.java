@@ -14,14 +14,14 @@ public class UserController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping("/getUser/{userId}")
-    public Object getUser(@PathVariable String userId) {
+    @GetMapping("/getUser/{inputData}")
+    public Object getUser(@PathVariable String inputData) {
 
-        String eurekaServiceUrl = "http://";
-        String eurekaAppName = "";
-        String eurekaRequstMappinName = "";
+        String eurekaServiceUrl = "http://127.0.0.1:9000";
+        String eurekaProviderAppName = "/SpringCloudDemoProvider";
+        String providerPathName = "/userProvider/getUse/";
 
-        eurekaServiceUrl += eurekaServiceUrl + eurekaRequstMappinName + "/" + userId;
+        eurekaServiceUrl = eurekaServiceUrl + eurekaProviderAppName + providerPathName + inputData;
 
 //		return  restTemplate.getForObject("http://127.0.0.1:8081/user/getUser/"+userId, Object.class);
         return restTemplate.getForObject(eurekaServiceUrl, Object.class);

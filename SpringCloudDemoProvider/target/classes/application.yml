@@ -2,6 +2,12 @@
 spring:
   application:
     name: SpringCloudDemoProvider
+  # zipkin 客户端配置信息
+  zipkin:
+    base-url: http://127.0.0.1:8000
+    sender:
+      type: web
+
 server:
   port: 8081
 # =====================================
@@ -22,5 +28,6 @@ eureka:
   client:
     register-with-eureka: true
     service-url:
-      defaultZone: http://${eurekaServer.user}:${eurekaServer.password}@${eurekaServer.host}:${eurekaserver.port}/eureka
+      defaultZone: http://${eurekaServer.host}:${eurekaserver.port}/eureka
+#      defaultZone: http://${eurekaServer.user}:${eurekaServer.password}@${eurekaServer.host}:${eurekaserver.port}/eureka
 

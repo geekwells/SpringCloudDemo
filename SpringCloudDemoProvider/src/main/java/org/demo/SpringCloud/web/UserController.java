@@ -2,6 +2,8 @@ package org.demo.SpringCloud.web;
 
 
 import org.demo.SpringCloud.domain.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/userProvider")
 public class UserController {
+
+    Logger logger = LoggerFactory.getLogger(getClass());
+
     @Value("${user.name}")
     private String userName;
     @Value("${user.age}")
@@ -22,12 +27,14 @@ public class UserController {
     // {入参} @PathVariable 参数绑定
     @GetMapping(value = "/getUser/{userId}")
     public User getUser(@PathVariable String userId) {
+        logger.info("======getUser param = [{}]", userId);
         User user = new User();
         user.setUserId(userId);
         user.setName(userName);
         user.setSex("");
         user.setAge(userAge);
 
+        logger.info("======getUser resp = [{}]", user.toString());
         return user;
     }
 

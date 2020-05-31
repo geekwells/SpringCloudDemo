@@ -2,6 +2,12 @@
 spring:
   application:
     name: SpringCloudDemoProvider
+  # zipkin 客户端配置信息
+  zipkin:
+    base-url: http://127.0.0.1:8000
+    sender:
+      type: web
+
 server:
   port: 8081
 # =====================================

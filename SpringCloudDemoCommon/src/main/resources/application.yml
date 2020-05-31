@@ -11,26 +11,30 @@ server:
 
 
 # zipkin 需要配置的
+zipkin:
+  base-url: http://127.0.0.1:8000/
+  locator:
+    discovery:
+      enabled: true
+  service:
+    name: 127.0.01 #zipkin
+locator:
+  discovery:
+    enabled: true
 management:
   metrics:
     web:
       server:
         auto-time-requests: false
+#eureka 配置
 eurekaServer:
   host: 127.0.0.1
   port: 9000
-
 eureka:
   client:
-    #将此项目注册到Eureka服务
     register-with-eureka: true
-    fetch-registry: false
-    # eureka 注册中心服务地址
     service-url:
-      defalutZone: http://${eurekaServer.host}:${eurekaServer.port}/eureka
-  #      defalutZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.server.host}:${eureka.server.port}
-  instance:
-    prefer-ip-address: true
+      defaultZone: http://${eurekaServer.host}:${eurekaServer.port}/eureka
 # redis 配置
 #redis:
 #  host: 127.0.0.1
