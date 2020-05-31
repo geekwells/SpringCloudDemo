@@ -1,6 +1,7 @@
 package org.demo.SpringCloud.web;
 
 
+import cn.hutool.core.date.DateUtil;
 import org.demo.SpringCloud.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/userProvider")
 public class UserController {
 
-    Logger logger = LoggerFactory.getLogger(getClass());
+    final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Value("${user.name}")
     private String userName;
@@ -30,8 +31,8 @@ public class UserController {
         logger.info("======getUser param = [{}]", userId);
         User user = new User();
         user.setUserId(userId);
-        user.setName(userName);
-        user.setSex("");
+        user.setName(userName + "|" + DateUtil.today());
+        user.setSex(DateUtil.now());
         user.setAge(userAge);
 
         logger.info("======getUser resp = [{}]", user.toString());

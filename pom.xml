@@ -18,7 +18,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
 
-        <lombok.version>1.18.12</lombok.version>
 
         <springBoot.version>2.0.3.RELEASE</springBoot.version>
         <springCloud.version>Finchley.RELEASE</springCloud.version>
@@ -27,6 +26,9 @@
         <springBootStarterParent.version>2.2.7.RELEASE</springBootStarterParent.version>
 
         <junit.version>4.12</junit.version>
+
+        <lombok.version>1.18.12</lombok.version>
+        <hutool.version>5.3.5</hutool.version>
     </properties>
 
     <dependencies>
@@ -85,6 +87,11 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
         </dependency>
     </dependencies>
 

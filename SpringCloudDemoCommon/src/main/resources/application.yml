@@ -8,25 +8,13 @@ spring:
 #      password: root
 server:
   port: 8000
-
-
-# zipkin 需要配置的
-zipkin:
-  base-url: http://127.0.0.1:8000/
-  locator:
-    discovery:
-      enabled: true
-  service:
-    name: 127.0.01 #zipkin
-locator:
-  discovery:
-    enabled: true
+# zipkin server 这个配置一定要加，不然打不开 web-ui控制台
 management:
   metrics:
     web:
       server:
         auto-time-requests: false
-#eureka 配置
+#eureka 配置信息
 eurekaServer:
   host: 127.0.0.1
   port: 9000
