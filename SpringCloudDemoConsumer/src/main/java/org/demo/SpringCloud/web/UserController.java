@@ -7,24 +7,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.Resource;
+
 @RestController
 @RequestMapping("/userConsumer")
 public class UserController {
 
-    @Autowired
+    @Resource
     private RestTemplate restTemplate;
 
     @GetMapping("/getUser/{inputData}")
     public Object getUser(@PathVariable String inputData) {
 
-        String eurekaServiceUrl = "http://127.0.0.1:9000";
+        String eurekaServiceUrl = "http://";  //http://127.0.0.1:9000
         String eurekaProviderAppName = "/SpringCloudDemoProvider";
-        String providerPathName = "/userProvider/getUse/";
+        eurekaProviderAppName = "SpringCloudDemoProvider";
+        String providerPathName = "/userProvider/getUser/";
 
         eurekaServiceUrl = eurekaServiceUrl + eurekaProviderAppName + providerPathName + inputData;
 
 //		return  restTemplate.getForObject("http://127.0.0.1:8081/user/getUser/"+userId, Object.class);
-        return restTemplate.getForObject(eurekaServiceUrl, Object.class);
+        return restTemplate.getForObject(eurekaServiceUrl, String.class);
     }
 
 

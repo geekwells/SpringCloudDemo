@@ -2,10 +2,17 @@ spring:
   application:
     name: eureka-server
   security:
-
     user:
       name: root
       password: root
+  #zipkin 配置信息
+  zipkin:
+    base-url: http://127.0.0.1:8000
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1.0
 
 server:
   host: 127.0.0.1

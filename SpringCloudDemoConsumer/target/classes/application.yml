@@ -2,12 +2,14 @@ server:
   port: 8082
 
 spring:
-
+  application:
+    name: SpringCloudDemoConsumer
   # zipkin 客户端配置参数
   zipkin:
     base-url: http://127.0.0.1:8000
     sender:
       type: web
+
 # eureka 客户端配置信息
 eurekaServer:
   host: 127.0.0.1
