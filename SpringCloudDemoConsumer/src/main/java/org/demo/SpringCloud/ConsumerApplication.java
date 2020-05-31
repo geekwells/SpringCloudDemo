@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 
 @SpringBootApplication
-public class SpringCloudDemoConsumer {
+public class ConsumerApplication {
 
     @Bean
     @LoadBalanced //切记一定要有这个 ，负载均衡注解 ，否则无法服务到 eureka服务
@@ -18,7 +18,7 @@ public class SpringCloudDemoConsumer {
 
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringCloudDemoConsumer.class, args);
+        SpringApplication.run(ConsumerApplication.class, args);
     }
 
 }

@@ -19,9 +19,9 @@
       <module name="SpringBootTest" target="1.8" />
       <module name="SpringCloudDemo" target="1.8" />
       <module name="SpringCloudDemoCommon" target="1.8" />
-      <module name="SpringCloudDemoConsumer" target="1.5" />
+      <module name="SpringCloudDemoConsumer" target="1.8" />
       <module name="SpringCloudDemoEureka" target="1.8" />
-      <module name="SpringCloudDemoProvider" target="1.5" />
+      <module name="SpringCloudDemoProvider" target="1.8" />
       <module name="SpringCloudDemoService" target="1.5" />
     </bytecodeTargetLevel>
   </component>
