@@ -9,13 +9,17 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SpringCloudDemoEureka" />
         <module name="SpringBootTest" />
+        <module name="actuator-service" />
         <module name="SpringCloudDemoService" />
         <module name="SpringCloudDemoCommon" />
         <module name="SpringCloudDemoProvider" />
+        <module name="boot-monitor" />
         <module name="SpringCloudDemoConsumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="actuator-service" target="1.8" />
+      <module name="boot-monitor" target="1.8" />
       <module name="SpringBootTest" target="1.8" />
       <module name="SpringCloudDemo" target="1.8" />
       <module name="SpringCloudDemoCommon" target="1.8" />
@@ -33,6 +37,8 @@
       <module name="SpringCloudDemoEureka" options="-parameters" />
       <module name="SpringCloudDemoProvider" options="-parameters" />
       <module name="SpringCloudDemoService" options="-parameters" />
+      <module name="actuator-service" options="-parameters" />
+      <module name="boot-monitor" options="-parameters" />
     </option>
   </component>
 </project>

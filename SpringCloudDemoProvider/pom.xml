@@ -29,10 +29,27 @@
         <smart-doc.version>1.8.6</smart-doc.version>
         <swagger2markup.version>1.3.3</swagger2markup.version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+
+        <micrometer.version>1.5.1</micrometer.version>
     </properties>
 
 
     <dependencies>
+
+        <!-- 需要监控的项目中引入actuator-service-1.0.jar-->
+        <dependency>
+            <groupId>com.github.qinxuewu</groupId>
+            <artifactId>actuator-service</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>D:/java/maven/repository/alocal-jar/actuator-service-1.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <version>${micrometer.version}</version>
+        </dependency>
 
         <!-- swagger 导出api离线文档文件 依赖包 -->
         <dependency>
