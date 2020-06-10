@@ -64,7 +64,7 @@ public class UserController {
      */
     @PostMapping("queryUser")
     public List<User> queryUser(@RequestBody User user) {
-        List<User> respUserList = new ArrayList<>();
+        List<User> respUserList = new ArrayList<User>();
         //查询是数据库
 //        respUserList = serveric.select(user);
         respUserList.add(user);

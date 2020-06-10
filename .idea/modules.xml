@@ -9,8 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/SpringCloudDemoEureka/SpringCloudDemoEureka.iml" filepath="$PROJECT_DIR$/SpringCloudDemoEureka/SpringCloudDemoEureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringCloudDemoProvider/SpringCloudDemoProvider.iml" filepath="$PROJECT_DIR$/SpringCloudDemoProvider/SpringCloudDemoProvider.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringCloudDemoService/SpringCloudDemoService.iml" filepath="$PROJECT_DIR$/SpringCloudDemoService/SpringCloudDemoService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../boot-actuator-master/actuator-service/actuator-service.iml" filepath="$PROJECT_DIR$/../boot-actuator-master/actuator-service/actuator-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../boot-actuator-master/boot-monitor/boot-monitor.iml" filepath="$PROJECT_DIR$/../boot-actuator-master/boot-monitor/boot-monitor.iml" />
     </modules>
   </component>
 </project>

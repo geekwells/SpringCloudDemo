@@ -9,12 +9,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SpringCloudDemoEureka" />
         <module name="SpringBootTest" />
-        <module name="actuator-service" />
+        <module name="SpringCloudDemoConsumer" />
         <module name="SpringCloudDemoService" />
         <module name="SpringCloudDemoCommon" />
         <module name="SpringCloudDemoProvider" />
-        <module name="boot-monitor" />
-        <module name="SpringCloudDemoConsumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

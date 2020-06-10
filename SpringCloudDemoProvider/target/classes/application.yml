@@ -33,3 +33,9 @@ eureka:
       defaultZone: http://${eurekaServer.host}:${eurekaserver.port}/eureka
 #      defaultZone: http://${eurekaServer.user}:${eurekaServer.password}@${eurekaServer.host}:${eurekaserver.port}/eureka
 
+##
+#监控应用名称 唯一
+#限制白名单 访问监控端点 为空则不限制  建议设置
+actuator.server.ip:
+#监控远程应用日志
+actuator.log.path: D:/log/boot-monitor/spring.log
