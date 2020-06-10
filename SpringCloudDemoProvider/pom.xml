@@ -9,6 +9,7 @@
 
     <groupId>org.geek.SpringCoudDemo</groupId>
     <artifactId>SpringCloudDemoProvider</artifactId>
+    <packaging>jar</packaging>
 
     <!-- 版本号管理 -->
     <properties>
@@ -18,8 +19,8 @@
 
         <lombok.version>1.18.12</lombok.version>
 
-        <springBoot.version>2.0.3.RELEASE</springBoot.version>
-        <springCloud.version>Finchley.RELEASE</springCloud.version>
+        <springBoot.version>2.3.0.RELEASE</springBoot.version>
+        <springCloud.version></springCloud.version>
         <eureka.version>2.0.3.RELEASE</eureka.version>
 
         <springBootStarterParent.version>2.2.7.RELEASE</springBootStarterParent.version>
@@ -31,31 +32,38 @@
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
 
         <micrometer.version>1.5.1</micrometer.version>
+
+        <springboot-devtools.version>2.3.0.RELEASE</springboot-devtools.version>
     </properties>
 
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
+        <!-- spring-boot-devtools 热部署 spring-boot 依赖包 optional true 可选依赖，子项目不会依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>${springboot-devtools.version}</version>
+            <optional>true</optional>
+        </dependency>
+
 
         <!-- 需要监控的项目中引入actuator-service-1.0.jar-->
-        <dependency>
-            <groupId>com.github.qinxuewu</groupId>
-            <artifactId>actuator-service</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>D:/java/maven/repository/alocal-jar/actuator-service-1.0.jar</systemPath>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>com.github.qinxuewu</groupId>-->
+        <!--            <artifactId>actuator-service</artifactId>-->
+        <!--            <version>1.0</version>-->
+        <!--            <scope>system</scope>-->
+        <!--            <systemPath>D:/java/maven/repository/alocal-jar/actuator-service-1.0.jar</systemPath>-->
+        <!--        </dependency>-->
 
-        <dependency>
-            <groupId>io.micrometer</groupId>
-            <artifactId>micrometer-registry-prometheus</artifactId>
-            <version>${micrometer.version}</version>
-        </dependency>
 
-        <!-- swagger 导出api离线文档文件 依赖包 -->
+        <!--         swagger 导出api离线文档文件 依赖包-->
         <dependency>
             <groupId>io.github.swagger2markup</groupId>
             <artifactId>swagger2markup</artifactId>
-            <version>${swagger2markup.version}</version>
+            <version>RELEASE</version>
+            <!--            <version>${swagger2markup.version}</version>-->
         </dependency>
 
         <!-- smart-doc 依赖包 -->
@@ -70,13 +78,14 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>${springfox-swagger2.version}</version>
+            <!--           <version>RELEASE</version>-->
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>${springfox-swagger2.version}</version>
+            <version>RELEASE</version>
+            <!--            <version>${springfox-swagger2.version}</version>-->
         </dependency>
-
 
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -87,23 +96,22 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
-            <version>${log4j-slf4j-impl.version}</version>
+            <!--            <version>${log4j-slf4j-impl.version}</version>-->
+            <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <!--注意此处的依赖是SpringBoot2.0以后专用的，如果您使用的SpringBoot版本低于2.0请使用spring-cloud-starter-eureka-server-->
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
+
         <!-- start添加zipkin 客户端依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
+            <version>RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <version>RELEASE</version>
         </dependency>
         <!-- end添加zipkin 客户端依赖 -->
 
@@ -120,4 +128,16 @@
             <url>http://jcenter.bintray.com</url>
         </repository>
     </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

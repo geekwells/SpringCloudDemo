@@ -8,9 +8,6 @@
     <file url="file://$PROJECT_DIR$/SpringCloudDemoEureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringCloudDemoProvider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringCloudDemoService/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../boot-actuator-master/actuator-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../boot-actuator-master/boot-monitor/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../boot-actuator-master/boot-monitor/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

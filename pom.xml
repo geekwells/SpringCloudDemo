@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.3.RELEASE</version>
+        <version>RELEASE</version>
     </parent>
 
     <properties>
@@ -19,11 +19,9 @@
         <java.version>1.8</java.version>
 
 
-        <springBoot.version>2.0.3.RELEASE</springBoot.version>
-        <springCloud.version>Finchley.RELEASE</springCloud.version>
-        <eureka.version>2.0.3.RELEASE</eureka.version>
-
-        <springBootStarterParent.version>2.2.7.RELEASE</springBootStarterParent.version>
+        <springBoot.version>2.3.0.RELEASE</springBoot.version>
+        <springCloud.version>Hoxton.RELEASE</springCloud.version>
+        <eureka.version>2.2.3.RELEASE</eureka.version>
 
         <junit.version>4.12</junit.version>
 
@@ -39,24 +37,21 @@
     </properties>
 
     <dependencies>
-        <!--        <dependency>-->
-        <!--            <groupId>log4j</groupId>-->
-        <!--            <artifactId>log4j</artifactId>-->
-        <!--            <version>${log4j.version}</version>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.3.0.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <!--            <version>${springCloud.version}</version>-->
+            <version>RELEASE</version>
+            <type>pom</type>
+            <!--            <scope>import</scope>-->
+        </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.slf4j</groupId>-->
-        <!--            <artifactId>slf4j-jcl</artifactId>-->
-        <!--            <version>${slf4j-jcl.version}</version>-->
-        <!--            <scope>compile</scope>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.logging.log4j</groupId>-->
-        <!--            <artifactId>log4j-slf4j-impl</artifactId>-->
-        <!--            <version>${log4j-slf4j-impl.version}</version>-->
-        <!--            <scope>compile</scope>-->
-        <!--        </dependency>-->
 
         <!--全局排除spring-boot-starter-logging内的所有依赖-->
         <dependency>
@@ -70,11 +65,11 @@
             </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>${springBoot.version}</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-web</artifactId>-->
+        <!--            <version>${springBoot.version}</version>-->
+        <!--        </dependency>-->
 
         <dependency>
             <groupId>junit</groupId>
@@ -83,31 +78,6 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-dependencies</artifactId>
-            <version>${springCloud.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>${springBoot.version}</version>
-
-        </dependency>
-
-
-        <dependency>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-            <groupId>org.springframework.cloud</groupId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <!--注意此处的依赖是SpringBoot2.0以后专用的，如果您使用的SpringBoot版本低于2.0请使用spring-cloud-starter-eureka-server-->
-            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-            <version>${eureka.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -138,7 +108,6 @@
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${springCloud.version}</version>
                 <type>pom</type>
-                <scope>import</scope>
             </dependency>
 
             <dependency>

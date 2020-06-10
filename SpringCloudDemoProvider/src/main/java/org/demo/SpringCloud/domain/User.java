@@ -1,10 +1,6 @@
 package org.demo.SpringCloud.domain;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Required;
-import org.springframework.lang.NonNull;
-
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 

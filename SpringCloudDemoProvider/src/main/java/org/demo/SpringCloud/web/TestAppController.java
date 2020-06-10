@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 /**
  * springCloud 测试 controller
  */
@@ -33,6 +32,10 @@ public class TestAppController {
         tempStr.append("Wellcomem SpringBoot , SpringCloud Test Demo");
         tempStr.append("<br/> name is " + userName);
         tempStr.append("<br/> email is " + userEmail);
+        tempStr.append("<br/> email is ssss");
+        tempStr.append("<br/> email is ssss");
+        tempStr.append("<br/> email is ssss");
+
         return tempStr.toString();
     }
 
