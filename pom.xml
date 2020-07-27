@@ -7,10 +7,11 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>RELEASE</version>
+        <version>2.1.6.RELEASE</version>
     </parent>
 
     <properties>
@@ -19,8 +20,8 @@
         <java.version>1.8</java.version>
 
 
-        <springBoot.version>2.3.0.RELEASE</springBoot.version>
-        <springCloud.version>Hoxton.RELEASE</springCloud.version>
+        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <eureka.version>2.2.3.RELEASE</eureka.version>
 
         <junit.version>4.12</junit.version>
@@ -37,21 +38,19 @@
     </properties>
 
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.3.0.RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
+            <version>${springBoot.version}</version>
+            <scope>runtime</scope>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-dependencies</artifactId>
-            <!--            <version>${springCloud.version}</version>-->
-            <version>RELEASE</version>
+            <version>${spring-cloud.version}</version>
             <type>pom</type>
-            <!--            <scope>import</scope>-->
+            <scope>runtime</scope>
         </dependency>
-
 
         <!--全局排除spring-boot-starter-logging内的所有依赖-->
         <dependency>
@@ -64,12 +63,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-web</artifactId>-->
-        <!--            <version>${springBoot.version}</version>-->
-        <!--        </dependency>-->
 
         <dependency>
             <groupId>junit</groupId>
@@ -92,64 +85,53 @@
         </dependency>
     </dependencies>
 
-
     <!-- 声明引入，版本依赖 -->
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-                <scope>test</scope>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${springCloud.version}</version>
-                <type>pom</type>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
             </dependency>
-
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <!--注意此处的依赖是SpringBoot2.0以后专用的，如果您使用的SpringBoot版本低于2.0请使用spring-cloud-starter-eureka-server-->
-                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-                <version>${eureka.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <!--注意此处的依赖是SpringBoot2.0以后专用的，如果您使用的SpringBoot版本低于2.0请使用spring-cloud-starter-eureka-server-->
-                <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-                <version>${eureka.version}</version>
+                <version>5.3.10</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
+    <modules>
+        <module>SpringCloudDemoProvider</module>
+        <module>SpringCloudDemoConsumer</module>
+        <module>SpringCloudDemoEureka</module>
+    </modules>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>alimaven spring plugin</id>
+            <name>alimaven spring plugin</name>
+            <url>https://maven.aliyun.com/repository/spring-plugin</url>
+        </pluginRepository>
+    </pluginRepositories>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
-    <modules>
-        <module>SpringCloudDemoCommon</module>
-
-        <module>SpringCloudDemoProvider</module>
-        <module>SpringCloudDemoConsumer</module>
-
-
-        <module>SpringCloudDemoEureka</module>
-        <module>SpringCloudDemoService</module>
-    </modules>
 </project>

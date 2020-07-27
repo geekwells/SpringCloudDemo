@@ -19,11 +19,10 @@
 
         <lombok.version>1.18.12</lombok.version>
 
-        <springBoot.version>2.3.0.RELEASE</springBoot.version>
-        <springCloud.version></springCloud.version>
+        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+        <springCloud.version>2.3.0.RELEASE</springCloud.version>
         <eureka.version>2.0.3.RELEASE</eureka.version>
 
-        <springBootStarterParent.version>2.2.7.RELEASE</springBootStarterParent.version>
 
         <junit.version>4.12</junit.version>
 
@@ -32,12 +31,40 @@
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
 
         <micrometer.version>1.5.1</micrometer.version>
-
-        <springboot-devtools.version>2.3.0.RELEASE</springboot-devtools.version>
+        <springboot-devtools.version>2.1.6.RELEASE</springboot-devtools.version>
+        <mybatis-plus.version>3.3.2</mybatis-plus.version>
     </properties>
 
 
     <dependencies>
+        <!-- mybatis-plus 工具包-代码生成器 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.21</version>
+        </dependency>
+        <!-- mybatis-plus 工具包-代码生成器 -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
         <!-- spring-boot-devtools 热部署 spring-boot 依赖包 optional true 可选依赖，子项目不会依赖 -->
         <dependency>
@@ -62,8 +89,7 @@
         <dependency>
             <groupId>io.github.swagger2markup</groupId>
             <artifactId>swagger2markup</artifactId>
-            <version>RELEASE</version>
-            <!--            <version>${swagger2markup.version}</version>-->
+            <version>${swagger2markup.version}</version>
         </dependency>
 
         <!-- smart-doc 依赖包 -->
@@ -83,8 +109,7 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>RELEASE</version>
-            <!--            <version>${springfox-swagger2.version}</version>-->
+            <version>${springfox-swagger2.version}</version>
         </dependency>
 
         <dependency>
@@ -96,8 +121,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
-            <!--            <version>${log4j-slf4j-impl.version}</version>-->
-            <version>RELEASE</version>
+            <version>${log4j-slf4j-impl.version}</version>
             <scope>compile</scope>
         </dependency>
 
@@ -106,12 +130,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
-            <version>RELEASE</version>
+            <version>2.0.3.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
-            <version>RELEASE</version>
+            <version>2.2.3.RELEASE</version>
         </dependency>
         <!-- end添加zipkin 客户端依赖 -->
 
@@ -129,15 +153,5 @@
         </repository>
     </repositories>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <fork>true</fork>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+
 </project>
