@@ -19,17 +19,21 @@
 
         <lombok.version>1.18.12</lombok.version>
 
-        <springBoot.version>2.0.3.RELEASE</springBoot.version>
-        <springCloud.version>Finchley.RELEASE</springCloud.version>
-        <eureka.version>2.0.3.RELEASE</eureka.version>
-
-        <springBootStarterParent.version>2.2.7.RELEASE</springBootStarterParent.version>
+        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <eureka.version>2.2.3.RELEASE</eureka.version>
 
         <junit.version>4.12</junit.version>
     </properties>
 
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <!--注意此处的依赖是SpringBoot2.0以后专用的，如果您使用的SpringBoot版本低于2.0请使用spring-cloud-starter-eureka-server-->
@@ -40,10 +44,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
+            <version>2.2.3.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <version>2.2.3.RELEASE</version>
         </dependency>
     </dependencies>
 
