@@ -3,7 +3,6 @@ package org.demo.springcloud.util;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
-import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
@@ -12,11 +11,16 @@ import java.util.Scanner;
 
 /**
  * TODO mybait-plus代码生成器
- * <!-- mybatis-plus生成器 依赖包 -->
+ *
+ * <dependency>
+ * <groupId>com.baomidou</groupId>
+ * <artifactId>mybatis-plus-boot-starter</artifactId>
+ * <version>${mybatis-plus.version}</version>
+ * </dependency>
  * <dependency>
  * <groupId>com.baomidou</groupId>
  * <artifactId>mybatis-plus-generator</artifactId>
- * <version>3.3.2</version>
+ * <version>${mybatis-plus.version}</version>
  * </dependency>
  * <dependency>
  * <groupId>org.apache.velocity</groupId>
@@ -53,7 +57,6 @@ public class MyBatisPlusAutoGenerator {
     }
 
     private static final String BASE_SRC_ROOT = "/src/main/java/";
-
     public void codeGenerate() {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
@@ -84,6 +87,8 @@ public class MyBatisPlusAutoGenerator {
         //最终生成代码目录为 baseSrc/org/demo/springcloud/moduleName
         pc.setModuleName(scannerInput("模块名"));
         mpg.setPackageInfo(pc);
+
+
 /**
  // 自定义配置
  InjectionConfig cfg = new InjectionConfig() {
@@ -157,5 +162,4 @@ return true;
     public static void main(String[] args) {
         new MyBatisPlusAutoGenerator().codeGenerate();
     }
-
 }

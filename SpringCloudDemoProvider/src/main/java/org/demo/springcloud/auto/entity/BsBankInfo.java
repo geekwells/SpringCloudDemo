@@ -2,6 +2,8 @@ package org.demo.springcloud.auto.entity;
 
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -11,14 +13,16 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author autoGenerateByMyBatisPlus
- * @since 2020-07-27
+ * @since 2020-08-01
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@TableName("bs_bank_info")
 public class BsBankInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId
     private String bankNo;
 
     private String bankName;

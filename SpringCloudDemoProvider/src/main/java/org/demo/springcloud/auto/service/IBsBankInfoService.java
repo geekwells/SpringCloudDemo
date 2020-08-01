@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author autoGenerateByMyBatisPlus
- * @since 2020-07-27
+ * @since 2020-08-01
  */
 public interface IBsBankInfoService extends IService<BsBankInfo> {
 
