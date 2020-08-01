@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author autoGenerateByMyBatisPlus
- * @since 2020-07-27
+ * @since 2020-08-01
  */
 @Service
 public class BsBankInfoServiceImpl extends ServiceImpl<BsBankInfoMapper, BsBankInfo> implements IBsBankInfoService {

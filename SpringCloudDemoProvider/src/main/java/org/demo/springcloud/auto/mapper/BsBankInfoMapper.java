@@ -1,5 +1,6 @@
 package org.demo.springcloud.auto.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.demo.springcloud.auto.entity.BsBankInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
@@ -9,8 +10,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author autoGenerateByMyBatisPlus
- * @since 2020-07-27
+ * @since 2020-08-01
  */
+@Mapper
 public interface BsBankInfoMapper extends BaseMapper<BsBankInfo> {
 
 }
