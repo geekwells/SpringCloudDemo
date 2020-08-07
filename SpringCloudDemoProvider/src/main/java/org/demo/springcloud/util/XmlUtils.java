@@ -59,10 +59,12 @@ public class XmlUtils {
             fileWriter.close();
         } catch (IOException e) {
             flag = false;
-            e.printStackTrace();
+            throw new IOException(e);
         } finally {
+            System.out.println(filePath + "=>" + flag);
             return flag;
         }
+
     }
 
     public static void main(String[] args) {
