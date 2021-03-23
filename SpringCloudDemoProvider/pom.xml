@@ -33,7 +33,7 @@
         <micrometer.version>1.5.1</micrometer.version>
         <springboot-devtools.version>2.1.6.RELEASE</springboot-devtools.version>
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
-        <xstream.version>1.4.12</xstream.version>
+        <xstream.version>1.4.16</xstream.version>
     </properties>
 
 
